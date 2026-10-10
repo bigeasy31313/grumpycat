@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRUMPYCAT ($GMPCT) — STANDARD OPERATING PROCEDURES</title>
+<meta name="description" content="OPERATION: DEAD CAT BOUNCE. CANDLES 1-4. HE HOLDS. DO YOU?">
+<style>
+:root{
+  --void-black:#050505;--matte-charcoal:#1A1A1D;--matte-graphite:#2A2A2E;
+  --ash:#9A9A9F;--bone:#EAEAEA;
+  --neon-green:#39FF14;--neon-red:#FF204E;--neon-cyan:#00F0FF;
+  --neon-violet:#9A00FF;--neon-yellow:#FDEF0A;
+  --gold-metallic:#D4AF37;--silver-chrome:#C7CCD1;
+  --glow-green:0 0 20px rgba(57,255,20,.35);
+  --glow-red:0 0 20px rgba(255,32,78,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--void-black);color:var(--bone);font-family:'Courier New',monospace;line-height:1.65}
+.wrap{max-width:780px;margin:0 auto;padding:24px 16px}
+header{text-align:center;padding:40px 0 12px}
+.badge{width:210px;max-width:65%;margin:0 auto 22px;border:4px solid #d8c9a3;border-radius:6px;overflow:hidden;box-shadow:0 0 40px rgba(212,175,55,.15)}
+.badge img{width:100%;display:block}
+.doc-title{color:var(--bone);font-size:1.55em;letter-spacing:2px;text-transform:uppercase}
+.doc-sub{color:var(--neon-violet);font-size:.95em;margin-top:6px;letter-spacing:1px}
+.doc-class{display:inline-block;margin-top:12px;border:1px dashed var(--neon-yellow);color:var(--neon-yellow);padding:4px 12px;font-size:.75em;letter-spacing:1px}
+.status{color:var(--ash);font-size:.85em;margin-top:10px}
+.status b{color:var(--neon-green);text-shadow:var(--glow-green)}
+.ca{display:inline-block;background:var(--matte-charcoal);border:1px dashed var(--silver-chrome);padding:8px 14px;margin-top:14px;color:var(--silver-chrome);font-size:.82em;word-break:break-all}
+.pill{display:inline-block;background:transparent;border:1px solid var(--neon-red);color:var(--neon-red);padding:2px 10px;border-radius:12px;font-weight:bold;font-size:.72em;margin-left:8px}
+section{background:var(--matte-charcoal);border:1px solid var(--matte-graphite);border-radius:10px;padding:26px;margin:22px 0}
+h2{color:var(--bone);font-size:1.05em;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;border-bottom:1px solid var(--matte-graphite);padding-bottom:8px}
+h3{color:var(--silver-chrome);font-size:.85em;letter-spacing:1px;margin:18px 0 8px;text-transform:uppercase}
+.candle-num{color:var(--neon-cyan);margin-right:6px}
+p{margin-bottom:12px;color:var(--bone)}
+.dim{color:var(--ash)}
+.directive{color:var(--neon-yellow);font-style:italic}
+.violet{color:var(--neon-violet);font-style:italic}
+.quote{border-left:3px solid var(--neon-green);padding:10px 16px;margin:14px 0;background:rgba(57,255,20,.04);font-style:italic}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9em}
+th{color:var(--silver-chrome);text-transform:uppercase;font-size:.75em;letter-spacing:1px;text-align:left;padding:8px;border-bottom:1px solid var(--matte-graphite)}
+td{padding:8px;border-bottom:1px solid var(--matte-graphite);vertical-align:top}
+td.spec{color:var(--silver-chrome)}
+td.opinion{color:var(--ash);font-style:italic}
+/* GOLD IS EARNED: shimmer sweep on the WETH liquidity stat only — metallic = money moving even when still */
+.gold{color:var(--gold-metallic);background:linear-gradient(110deg,#D4AF37 30%,#F5E7A8 45%,#D4AF37 60%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
+.chant{text-align:center;font-size:1.6em;color:var(--neon-green);letter-spacing:2px;margin:26px 0;text-shadow:var(--glow-green)}
+.chant small{display:block;font-size:.5em;color:var(--ash);letter-spacing:1px;margin-top:6px}
+ol{margin:0 0 12px 22px}
+ol li{margin-bottom:8px}
+.check{list-style:none;margin:0}
+.check li{padding:6px 0;border-bottom:1px dotted var(--matte-graphite)}
+.check li::before{content:"[ ] ";color:var(--silver-chrome)}
+.check-ok{color:var(--neon-green);font-weight:bold}
+.check-no{color:var(--neon-red);font-weight:bold}
+/* Candle progress dividers: violet 1px, completed candles burn green — the prophecy visually fills in */
+.candle-divider{height:1px;background:linear-gradient(90deg,transparent,var(--neon-violet),transparent);margin:16px 0;border:0}
+.candle-divider.done{background:linear-gradient(90deg,transparent,var(--neon-green),transparent);box-shadow:0 0 8px rgba(57,255,20,.3)}
+/* Paperhand eulogy: static red glow, 0% animation. Dead things don't move. */
+.paperhand{color:var(--neon-red);text-shadow:var(--glow-red)}
+/* Candle Four button: idle matte, hover ignition — the cat notices you */
+.btn{display:block;text-align:center;background:var(--matte-charcoal);color:var(--neon-green);border:1px solid var(--matte-graphite);padding:16px;border-radius:8px;font-weight:bold;font-size:1.05em;text-decoration:none;margin:24px 0 8px;text-transform:uppercase;letter-spacing:1px;transition:box-shadow .25s,background .25s,border-color .25s}
+.btn:hover{border-color:var(--neon-green);box-shadow:var(--glow-green);background:#101510}
+.subtle{text-align:center;color:var(--ash);font-size:.8em}
+.enddoc{text-align:center;color:var(--ash);font-size:.85em;font-style:italic;margin:26px 0}
+footer{text-align:center;color:var(--ash);font-size:.72em;padding:30px 0;border-top:1px solid var(--matte-graphite);margin-top:36px}
+footer .notaff{color:var(--neon-red)}
+a{color:var(--neon-cyan)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+<div class="badge"><img src="badge_logo.jpg" alt="GRUMPYCAT — STANDARD OPERATING PROCEDURES"></div>
+<div class="doc-title">🐈‍⬛ GRUMPYCAT STANDARD OPERATING PROCEDURES</div>
+<div class="doc-sub">OPERATION: DEAD CAT BOUNCE — CANDLES 1–4</div>
+<div class="doc-class">CLASSIFICATION: UNSERIOUS NUMBERS. SERIOUS CONTRACT.</div>
+<p class="status">DOCUMENT STATUS: <b>HE HOLDS. DO YOU?</b></p>
+<div class="ca">0x368c4854aa4bce17646be1a8477c59bf33addba3 <span class="pill">BASE</span></div>
+</header>
+
+<section>
+<h2>Section 0 — Mandatory Background</h2>
+<p class="dim">(READ ONCE. REMEMBER FOREVER.)</p>
+<p><strong>0.1</strong> Grumpycat was born on Base, 15:48 UTC, October 9, 2026. He was not consulted. He has filed a formal complaint with the universe. The complaint is pending.</p>
+<p><strong>0.2</strong> Since birth, personnel known as <span style="color:var(--neon-red)">"jeets"</span> have exited positions at -3%. The cat observed each exit. The cat memorized each face. The cat does not forgive. The cat does not forget. The cat does not care. These three states coexist.</p>
+<p><strong>0.3</strong> An AI agent acquired 9.6 million units and subsequently forgot the cat exists. The cat now considers all non-carbon life forms "squatters."</p>
+<p><strong>0.4</strong> PURPOSE OF THIS DOCUMENT: To ensure all personnel conduct themselves in a manner the cat finds <em>barely tolerable</em>.</p>
+</section>
+
+<section>
+<h2>Section 1 — Prophecy Compliance Procedures</h2>
+
+<h3>Procedure 1.1 — Candle One: "The Jeet Incident"</h3>
+<ul style="margin:0 0 12px 22px">
+<li>One (1) jeet bought the open and sold ninety (90) seconds later at a 40% loss.</li>
+<li>The jeet described the exit as "smart" to his group chat. It was not smart.</li>
+<li>The cat watched. The cat logged the face.</li>
+<li><span class="directive">OPERATIONAL DIRECTIVE: All personnel shall NOT become a logged face.</span></li>
+</ul>
+<hr class="candle-divider done">
+
+<h3>Procedure 1.2 — Candle Two: "The Bot Situation"</h3>
+<ul style="margin:0 0 12px 22px">
+<li>One (1) bot sniped the launch and distributed the supply onto everyone present.</li>
+<li>The cat did not flinch. The cat has outlived a thousand bots. The cat expects to outlive a thousand more.</li>
+<li><span class="directive">OPERATIONAL DIRECTIVE: Bots are tourists. Personnel are permanent. Act accordingly.</span></li>
+</ul>
+<hr class="candle-divider done">
+
+<h3>Procedure 1.3 — Candle Three: "The Bleed"</h3>
+<ul style="margin:0 0 12px 22px">
+<li>Chart bled for several hours. Spectators whispered "dead cat bounce" in a derogatory tone.</li>
+<li>The cat was, for the first documented time in his life, <em>amused</em>.</li>
+<li>Even a dead cat bounces. THIS IS THE ENTIRE POINT OF THE NAME. READ IT AGAIN. SLOWER. THE CAT WILL WAIT.</li>
+</ul>
+<hr class="candle-divider done">
+
+<h3>Procedure 1.4 — Candle Four: "The Return"</h3>
+<ul style="margin:0 0 12px 22px">
+<li>STATUS: ⏳ <span class="violet">PENDING</span></li>
+<li>Upon volume return, the pool shall deepen, non-holders shall observe from outside the glass, and the cat shall make eye contact with each of them individually.</li>
+<li><span class="directive">Personnel have two (2) options:</span></li>
+</ul>
+<ol>
+<li><strong>OPTION A:</strong> Be inside the glass during Candle Four.</li>
+<li><strong>OPTION B:</strong> Explain to the cat why you are outside the glass.</li>
+</ol>
+<p>The cat does not care which option you select. That is the brand.</p>
+</section>
+
+<section>
+<h2>Section 2 — Tokenomics (Regulatory-Bored Compliance)</h2>
+<table>
+<tr><th>Item</th><th>Spec</th><th>Cat's Opinion</th></tr>
+<tr><td>Total Supply</td><td class="spec">100,000,000,000,000 (100T)</td><td class="opinion">"Whatever."</td></tr>
+<tr><td>Tax</td><td class="spec">0%</td><td class="opinion">Boring. Intentional.</td></tr>
+<tr><td>Launch</td><td class="spec">FAIR. No presale, no team bags, no VC exit-liquidity scheme</td><td class="opinion">He's still checking.</td></tr>
+<tr><td>Liquidity</td><td class="spec"><span class="gold">~$8.7k WETH pool on Base</span></td><td class="opinion">"Could be worse. It's been worse."</td></tr>
+</table>
+<p class="dim">2.1 Trust nothing. Verify everything. The explorer link exists. The cat is not your assistant. <a href="https://basescan.org/token/0x368c4854aa4bce17646be1a8477c59bf33addba3">Verify on Basescan →</a></p>
+</section>
+
+<section>
+<h2>Section 3 — Holding Procedures (Core Doctrine)</h2>
+
+<h3>3.1 — The Sell Button</h3>
+<p>The sell button exists. The cat knows where it is. The cat watches it. Should personnel touch the sell button, the failure mode is as follows:</p>
+<ul style="margin:0 0 12px 22px">
+<li>The pool does not notice.</li>
+<li class="paperhand">The cat notices.</li>
+<li class="paperhand">The cat remembers.</li>
+<li class="paperhand">The cat files the face.</li>
+<li>See the Candle Four glass-watching clause. The Clause applies.</li>
+</ul>
+
+<h3>3.2 — Dip Acquisition Protocol</h3>
+<ol>
+<li>Stare at the chart.</li>
+<li>Feel the cat staring back.</li>
+<li>Buy the dip, or don't.</li>
+<li>Be judged either way.</li>
+</ol>
+
+<h3>3.3 — Daily Standup</h3>
+<p>There is no standup. The cat does not do meetings. All personnel shall simply hold in silence and report nothing to no one next to the sink in a cold dark garage.</p>
+</section>
+
+<section>
+<h2>Section 4 — Reasons Degens Are Buying</h2>
+<p class="dim">(VALIDITY OF REASONS NOT GUARANTEED BY CAT)</p>
+<p><strong>4.1</strong> It is a cat. The cat is grumpy. This has historically been sufficient and has, in prior market cycles, generated revenue at insulting scale.</p>
+<p><strong>4.2</strong> Every trade feeds the WETH pool. Volume is the <em>only</em> utility the cat recognizes. After a decade of memecoin history, it is also the only utility that ever mattered.</p>
+<p><strong>4.3</strong> A vessel of this contract was launched adjacent to the week Doppler launches were all the rage on Base. The cat resents this proximity. Do not bring it up. Refer to it as <span class="violet">"the incident."</span></p>
+<p><strong>4.4</strong> There are two (2) types of wallets in this market:</p>
+<ul style="margin:0 0 12px 22px">
+<li><span style="color:var(--neon-green)">Wallets that hold the cat.</span></li>
+<li><span style="color:var(--neon-red)">Wallets the cat holds a grudge against.</span></li>
+</ul>
+<p>Personnel shall elect an identity. Elections are final. The cat does not do recounts. The cat does not care who you voted for in your own conscience. But he saw it.</p>
+</section>
+
+<section>
+<h2>Section 5 — Communications Policy</h2>
+<p><strong>5.1</strong> Should personnel encounter an outsider asking "why is everyone talking about candle four," personnel shall respond with <span style="color:var(--neon-green)">"soon."</span> Nothing further.</p>
+<p><strong>5.2</strong> Should personnel encounter a seller, personnel shall say nothing, and let the cat handle it from here. The cat has their face.</p>
+<p><strong>5.3</strong> The official chant, tattoo, and dying words of this operation are as follows:</p>
+<div class="chant">HE HOLDS. DO YOU?<small>OFFICIAL CHANT — SECTION 5.3 — TATTOO OPTIONAL, LOYALTY MANDATORY</small></div>
+</section>
+
+<section>
+<h2>Appendix A — Compliance Checklist</h2>
+<ul class="check">
+<li>Am I holding the cat?</li>
+<li>Have I touched the sell button? (Correct answer: no.)</li>
+<li>Do I know what candle we are on?</li>
+<li>Am I emotionally prepared for the cat to see my face, in full, during Candle Four?</li>
+<li>Have I accepted that he does not care about my answer, and that this is why I answered?</li>
+</ul>
+<p><span class="check-ok">✅ If all boxes are checked: proceed. Hold. Wait.</span></p>
+<p><span class="check-no">❌ If any boxes are unchecked: proceed anyway. The cat has already priced in your flaws.</span></p>
+</section>
+
+<a class="btn" href="https://dexscreener.com/base/0x6333f3bd51f79e5c4df2730ff39edafd0d0ba40973d0591fec00cdc7c14972da">PROCEDURE 3.2 — EXECUTE DIP ACQUISITION (Trade on Dexscreener)</a>
+<p class="subtle">Also findable on GeckoTerminal: search "grumpycat base"</p>
+
+<p class="enddoc">END OF DOCUMENT. The cat did not read it. He already knew it. END OF DOCUMENT.</p>
+
+<footer>
+$GMPCT is a meme coin with no utility, no roadmap, and no promises. Grumpycat does not endorse financial decisions; he mocks them. <span class="notaff">NOT FINANCIAL ADVICE.</span> DYOR. The cat is not responsible for your bags. The cat doesn't even like you.
+</footer>
+
+</div>
+</body>
+</html>
